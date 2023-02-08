@@ -1,10 +1,12 @@
 import {
   Controller,
   Get,
+  Post,
   Query,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common'
+import { ApiBody, ApiResponse } from '@nestjs/swagger'
 import { ExampleDTO } from 'src/lib/dto'
 import { ExampleService } from 'src/services/example.service'
 
@@ -21,9 +23,11 @@ export class ExampleController {
     return await this.exampleService.timeout()
   }
 
-  @Get('validator')
+  @Post('validator')
   @UsePipes(ValidationPipe)
-  async validator(@Query() data: ExampleDTO): Promise<string> {
+  @ApiResponse({ type: ExampleDTO, status: 200 })
+  @ApiBody({ type: ExampleDTO })
+  async validator(@Query() data: ExampleDTO): Promise<ExampleDTO> {
     return
   }
 

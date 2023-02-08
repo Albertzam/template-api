@@ -39,6 +39,7 @@ export class DeserializerExceptionFilter implements ExceptionFilter {
       const microserviceError = convertErrorMicroservice(
         coerceMicroserviceErrorFromRpc(error as RpcException)
       )
+
       const status = this.errorService.getHttpStatus(microserviceError.code)
       logger.error(`${error.message}`, {
         error: {
