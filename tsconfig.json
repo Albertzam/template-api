@@ -9,12 +9,12 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "incremental": true,
     "paths": {
-      "@clients": ["./src/client"],
-      "@constants": ["./src/lib/constants"],
-      "@interfaces": ["./src/lib/interfaces"]
+      "@clients": ["src/client"],
+      "@constants": ["src/lib/constants"],
+      "@interfaces": ["src/lib/interfaces"]
     }
   }
 }

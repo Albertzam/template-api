@@ -7,8 +7,8 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 import { ApiBody, ApiResponse } from '@nestjs/swagger'
-import { ExampleDTO } from 'src/lib/dto'
-import { ExampleService } from 'src/services/example.service'
+import { ExampleDTO } from '../lib/dto'
+import { ExampleService } from '../services/example.service'
 
 @Controller()
 export class ExampleController {
@@ -19,7 +19,7 @@ export class ExampleController {
   }
 
   @Get('timeout')
-  async timeout(): Promise<string> {
+  async timeout(): Promise<{ _id: string; name: string }> {
     return await this.exampleService.timeout()
   }
 

@@ -5,7 +5,7 @@ import {
   HttpException,
 } from '@nestjs/common'
 import { RpcException } from '@nestjs/microservices'
-import { logger } from 'src/middleware'
+import { logger } from '../middleware'
 import {
   coerceMicroserviceErrorFromRpc,
   convertErrorMicroservice,

@@ -9,7 +9,7 @@ export class UserClient {
     @Inject(USER_QUEUE_NAME) private readonly userClient: ClientProxy
   ) {}
 
-  async timeoutMicroservice(): Promise<string> {
+  async timeoutMicroservice(): Promise<{ _id: string; name: string }> {
     return await lastValueFrom(
       this.userClient.send(USER_COMMANDS.LOGIN, '').pipe(timeout(2000))
     )
