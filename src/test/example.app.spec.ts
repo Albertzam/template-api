@@ -4,7 +4,7 @@ import { INestApplication } from '@nestjs/common'
 import { ClientProxy, Closeable } from '@nestjs/microservices'
 import { Test } from '@nestjs/testing'
 import { of } from 'rxjs'
-import { ExampleService } from 'src/services/example.service'
+import { ExampleService } from '../services/example.service'
 import { ExampleController } from '../controllers/example.controller'
 import { mock } from '../__mock__/test'
 
